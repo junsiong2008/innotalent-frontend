@@ -1,7 +1,6 @@
-import 'package:devhack_2023/pages/upload/upload_main.dart';
 import 'package:flutter/material.dart';
-import 'package:devhack_2023/dashboard.dart';
 import 'package:devhack_2023/const.dart';
+import 'package:devhack_2023/pages/upload/upload_main.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,8 +35,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'IBMPlexSans',
         brightness: Brightness.dark,
       ),
-      // home: UploadMain(),
-      home: Dashboard(),
+      home: UploadMain(),
     );
   }
 }

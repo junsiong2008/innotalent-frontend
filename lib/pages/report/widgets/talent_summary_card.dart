@@ -1,43 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:devhack_2023/pages/report/widgets/talent_metric_card.dart';
 import 'package:devhack_2023/Responsive.dart';
-import 'package:devhack_2023/models/talent_metric_model.dart';
 
 class TalentSummaryCard extends StatelessWidget {
-  const TalentSummaryCard({super.key});
+  const TalentSummaryCard({
+    super.key,
+    required this.preGrade,
+    required this.prePerformance,
+    required this.preSalary,
+    required this.nextInterviewPercentage,
+    required this.probabilityLeavingFirstYear,
+  });
 
-  final List<TalentMetricModel> talentMetrics = const [
-    TalentMetricModel(
-      icon: Icons.speed_outlined,
-      iconColor: Colors.red,
-      value: "B+",
-      title: "Overall Rating",
-    ),
-    TalentMetricModel(
-      icon: Icons.trending_up,
-      iconColor: Colors.orange,
-      value: "90",
-      title: "Performance Prediction",
-    ),
-    TalentMetricModel(
-      icon: Icons.account_balance_wallet_outlined,
-      iconColor: Colors.green,
-      value: "RM 3500",
-      title: "Recommended Salary",
-    ),
-    TalentMetricModel(
-      icon: Icons.group_outlined,
-      iconColor: Colors.blue,
-      value: "80%",
-      title: "Recommended for Interview",
-    ),
-    TalentMetricModel(
-      icon: Icons.door_back_door_outlined,
-      iconColor: Colors.amberAccent,
-      value: "20%",
-      title: "Probability of Leaving in 1st Year",
-    ),
-  ];
+  final String preGrade;
+  final String prePerformance;
+  final String preSalary;
+  final String nextInterviewPercentage;
+  final String probabilityLeavingFirstYear;
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +31,13 @@ class TalentSummaryCard extends StatelessWidget {
       children: [
         TalentMetricCard(
           title: 'Overall Rating',
-          value: 'B+',
+          value: preGrade,
           icon: Icons.speed_outlined,
           iconColor: Colors.red,
         ),
         TalentMetricCard(
           title: 'Performance Prediction',
-          value: '75',
+          value: prePerformance,
           unit: '%',
           icon: Icons.trending_up,
           iconColor: Colors.orange,
@@ -66,20 +45,20 @@ class TalentSummaryCard extends StatelessWidget {
         TalentMetricCard(
           title: "Recommended Salary",
           currency: 'RM',
-          value: "3500",
+          value: preSalary,
           icon: Icons.account_balance_wallet_outlined,
           iconColor: Colors.green,
         ),
         TalentMetricCard(
           icon: Icons.group_outlined,
           iconColor: Colors.blue,
-          value: '80',
+          value: nextInterviewPercentage,
           unit: '%',
           title: 'Recommended for Interview',
         ),
         TalentMetricCard(
           title: 'Probability of Leaving in 1st Year',
-          value: '10',
+          value: probabilityLeavingFirstYear,
           unit: '%',
           icon: Icons.door_back_door_outlined,
           iconColor: Colors.amberAccent,

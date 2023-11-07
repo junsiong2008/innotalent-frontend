@@ -1,9 +1,15 @@
+import 'package:collection/collection.dart';
 import 'package:devhack_2023/responsive.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class ResignationProbablityLineGraph extends StatelessWidget {
-  ResignationProbablityLineGraph({super.key});
+  ResignationProbablityLineGraph({
+    super.key,
+    required this.fiveYearsResignationProbability,
+  });
+
+  final List<double> fiveYearsResignationProbability;
 
   final bottomTitle = {
     0: '2024',
@@ -21,14 +27,6 @@ class ResignationProbablityLineGraph extends StatelessWidget {
     80: '80',
     100: '100'
   };
-
-  final List<FlSpot> spots = const [
-    FlSpot(0, 10),
-    FlSpot(10, 20),
-    FlSpot(20, 25),
-    FlSpot(30, 35),
-    FlSpot(40, 40),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -93,25 +91,30 @@ class ResignationProbablityLineGraph extends StatelessWidget {
         borderData: FlBorderData(show: false),
         lineBarsData: [
           LineChartBarData(
-              isCurved: true,
-              curveSmoothness: 0,
-              color: Theme.of(context).primaryColor,
-              barWidth: 2.5,
-              isStrokeCapRound: true,
-              belowBarData: BarAreaData(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Theme.of(context).primaryColor.withOpacity(0.5),
-                    Colors.transparent
-                  ],
-                ),
-                show: true,
-                color: Theme.of(context).primaryColor.withOpacity(0.5),
+            isCurved: true,
+            curveSmoothness: 0,
+            color: Theme.of(context).primaryColor,
+            barWidth: 2.5,
+            isStrokeCapRound: true,
+            belowBarData: BarAreaData(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Theme.of(context).primaryColor.withOpacity(0.5),
+                  Colors.transparent
+                ],
               ),
-              dotData: FlDotData(show: false),
-              spots: spots)
+              show: true,
+              color: Theme.of(context).primaryColor.withOpacity(0.5),
+            ),
+            dotData: FlDotData(show: false),
+            spots: fiveYearsResignationProbability
+                .mapIndexed(
+                  (idx, e) => FlSpot(idx * 10, e),
+                )
+                .toList(),
+          )
         ],
         minX: 0,
         maxX: 40,

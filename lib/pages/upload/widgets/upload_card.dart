@@ -6,6 +6,7 @@ import 'package:devhack_2023/responsive.dart';
 import 'package:devhack_2023/services/innotalent_service.dart';
 import 'package:devhack_2023/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'file_preview_widget.dart';
 
@@ -50,19 +51,42 @@ class _UploadCardState extends State<UploadCard> {
                           onRemovePressed: () => setState(() => file = null),
                           onSubmit: () async {
                             setState(() => loading = true);
-                            InnotalentService innotalent = InnotalentService();
-                            await innotalent
-                                .submitApplication()
-                                .whenComplete(() {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => Dashboard()),
+
+                            try {
+                              InnotalentService innotalent =
+                                  InnotalentService();
+                              final talentId = await innotalent
+                                  .submitApplication(file!.data);
+
+                              final talentStat =
+                                  await innotalent.getTalentStat(talentId);
+
+                              if (context.mounted) {
+                                Navigator.of(context)
+                                    .push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Dashboard(
+                                      talentStat: talentStat,
+                                    ),
+                                  ),
+                                )
+                                    .then((value) {
+                                  setState(() {
+                                    file = null;
+                                    loading = false;
+                                  });
+                                });
+                              }
+                            } catch (e) {
+                              if (mounted) setState(() => loading = false);
+                              Fluttertoast.showToast(
+                                msg:
+                                    'Something went wrong. Please try again later.',
+                                timeInSecForIosWeb: 3,
+                                webBgColor: '#394b4e',
+                                textColor: Colors.white,
                               );
-                              setState(() {
-                                file = null;
-                                loading = false;
-                              });
-                            });
+                            }
                           },
                         )
                       : DropzoneWidget(
@@ -76,9 +100,3 @@ class _UploadCardState extends State<UploadCard> {
     );
   }
 }
-
-
-
-// DropzoneWidget(
-//                 onDroppedFile: (file) => setState(() => this.file = file),
-//               ),

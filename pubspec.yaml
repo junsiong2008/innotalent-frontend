@@ -21,6 +21,9 @@ dependencies:
   dotted_border: ^2.1.0
   lottie: ^2.7.0
   auto_size_text: ^3.0.0
+  collection: ^1.17.2
+  fluttertoast: ^8.2.2
+  http: ^1.1.0
   
 
 dev_dependencies:
@@ -47,6 +50,7 @@ flutter:
     - assets/images/
     - assets/svg/
     - assets/animations/
+    - data/
 
   fonts:
     - family: IBMPlexSans

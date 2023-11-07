@@ -1,9 +1,17 @@
+import 'package:collection/collection.dart';
 import 'package:devhack_2023/const.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class ReturnBarChartCard extends StatelessWidget {
-  const ReturnBarChartCard({super.key});
+  const ReturnBarChartCard({
+    super.key,
+    required this.fiveYearsCost,
+    required this.fiveYearsReturn,
+  });
+
+  final List<double> fiveYearsCost;
+  final List<double> fiveYearsReturn;
 
   final Color negative = const Color(0XFFDFA9B0);
   final Color positive = const Color(primaryColorCode);
@@ -56,7 +64,12 @@ class ReturnBarChartCard extends StatelessWidget {
             show: false,
           ),
           groupsSpace: barsSpace,
-          barGroups: getData(barsWidth, barsSpace),
+          barGroups: getBarChartData(
+            barsWidth: barsWidth,
+            barsSpace: barsSpace,
+            fiveYearsCost: fiveYearsCost,
+            fiveYearsReturn: fiveYearsReturn,
+          ),
         ),
       );
     });
@@ -113,83 +126,29 @@ class ReturnBarChartCard extends StatelessWidget {
     );
   }
 
-  List<BarChartGroupData> getData(double barsWidth, double barsSpace) {
-    return [
-      BarChartGroupData(
-        x: 0,
+  List<BarChartGroupData> getBarChartData({
+    required double barsWidth,
+    required barsSpace,
+    required List<double> fiveYearsCost,
+    required List<double> fiveYearsReturn,
+  }) {
+    return fiveYearsCost.mapIndexed((index, element) {
+      final costToY = (element / (fiveYearsReturn[index] + element)) * 100;
+      return BarChartGroupData(
+        x: index,
         barsSpace: barsSpace,
         barRods: [
           BarChartRodData(
             toY: 100,
             rodStackItems: [
-              BarChartRodStackItem(0, 50, negative),
-              BarChartRodStackItem(50, 100, positive),
+              BarChartRodStackItem(0, costToY, negative),
+              BarChartRodStackItem(costToY, 100, positive),
             ],
             borderRadius: BorderRadius.zero,
             width: barsWidth,
           ),
         ],
-      ),
-      BarChartGroupData(
-        x: 1,
-        barsSpace: barsSpace,
-        barRods: [
-          BarChartRodData(
-            toY: 100,
-            rodStackItems: [
-              BarChartRodStackItem(0, 30, negative),
-              BarChartRodStackItem(30, 100, positive),
-            ],
-            borderRadius: BorderRadius.zero,
-            width: barsWidth,
-          ),
-        ],
-      ),
-      BarChartGroupData(
-        x: 2,
-        barsSpace: barsSpace,
-        barRods: [
-          BarChartRodData(
-            toY: 100,
-            rodStackItems: [
-              BarChartRodStackItem(0, 20, negative),
-              BarChartRodStackItem(20, 100, positive),
-            ],
-            borderRadius: BorderRadius.zero,
-            width: barsWidth,
-          ),
-        ],
-      ),
-      BarChartGroupData(
-        x: 3,
-        barsSpace: barsSpace,
-        barRods: [
-          BarChartRodData(
-            toY: 100,
-            rodStackItems: [
-              BarChartRodStackItem(0, 15, negative),
-              BarChartRodStackItem(15, 100, positive),
-            ],
-            borderRadius: BorderRadius.zero,
-            width: barsWidth,
-          ),
-        ],
-      ),
-      BarChartGroupData(
-        x: 4,
-        barsSpace: barsSpace,
-        barRods: [
-          BarChartRodData(
-            toY: 100,
-            rodStackItems: [
-              BarChartRodStackItem(0, 10, negative),
-              BarChartRodStackItem(10, 100, positive),
-            ],
-            borderRadius: BorderRadius.zero,
-            width: barsWidth,
-          ),
-        ],
-      ),
-    ];
+      );
+    }).toList();
   }
 }

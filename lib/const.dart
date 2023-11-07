@@ -3,4 +3,4 @@ import 'package:flutter/material.dart';
 const primaryColorCode = 0xFFA9DFD8;
 const cardBackgroundColor = Color(0xFF21222D);
 
-const innoTalentUrl = '';
+const innoTalentUrl = 'https://localhost:5500/api/InnoTalent';

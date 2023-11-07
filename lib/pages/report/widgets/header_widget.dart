@@ -1,33 +1,22 @@
+import 'package:devhack_2023/utils/role_util.dart';
 import 'package:flutter/material.dart';
 import 'package:devhack_2023/responsive.dart';
-
-const List<String> roles = <String>[
-  'Accountant',
-  'Actuary',
-  'AI',
-  'Assembler',
-  'Auditor',
-  'Brand Specialist',
-  'Cloud Solutions Architect',
-  'Content Marketing',
-  'Credit Analyst',
-  'Cybersecurity Specialist',
-];
 
 class Header extends StatefulWidget {
   const Header({
     super.key,
     required this.scaffoldKey,
+    required this.roleId,
   });
 
   final GlobalKey<ScaffoldState> scaffoldKey;
+  final int roleId;
 
   @override
   State<Header> createState() => _HeaderState();
 }
 
 class _HeaderState extends State<Header> {
-  String dropdownValue = roles.first;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -53,15 +42,10 @@ class _HeaderState extends State<Header> {
             ),
           Expanded(
             child: DropdownMenu(
-              initialSelection: roles.first,
-              onSelected: (String? value) {
-                // This is called when the user selects an item.
-                setState(() {
-                  dropdownValue = value!;
-                });
-              },
+              enabled: false,
+              initialSelection: RoleUtil.getRoleById(widget.roleId),
               dropdownMenuEntries:
-                  roles.map<DropdownMenuEntry<String>>((String value) {
+                  RoleUtil.roles.map<DropdownMenuEntry<String>>((String value) {
                 return DropdownMenuEntry<String>(value: value, label: value);
               }).toList(),
             ),

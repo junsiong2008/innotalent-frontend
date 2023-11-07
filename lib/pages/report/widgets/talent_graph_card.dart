@@ -1,4 +1,5 @@
 import 'package:devhack_2023/const.dart';
+import 'package:devhack_2023/models/talent_stat.dart';
 import 'package:devhack_2023/pages/report/widgets/resignation_probability_line_graph.dart';
 import 'package:devhack_2023/pages/report/widgets/return_bar_chart_card.dart';
 import 'package:devhack_2023/pages/report/widgets/rating_spider_chart_card.dart';
@@ -7,7 +8,8 @@ import 'package:devhack_2023/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 
 class TalentGraphCard extends StatelessWidget {
-  const TalentGraphCard({super.key});
+  const TalentGraphCard({super.key, required this.talentStat});
+  final TalentStat talentStat;
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +25,25 @@ class TalentGraphCard extends StatelessWidget {
           mainAxisSpacing: 12.0,
           childAspectRatio: Responsive.isMobile(context) ? 16 / 9 : 3 / 2),
       children: [
-        const CustomCard(
-          padding: EdgeInsets.all(5),
+        CustomCard(
+          padding: const EdgeInsets.all(5),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   'Overall Rating Prediction',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Expanded(
-                child: RatingSpiderChartCard(),
+                child: RatingSpiderChartCard(
+                  preRating: talentStat.preRating,
+                ),
               ),
             ],
           ),
@@ -59,8 +63,11 @@ class TalentGraphCard extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              const Expanded(
-                child: ReturnBarChartCard(),
+              Expanded(
+                child: ReturnBarChartCard(
+                  fiveYearsCost: talentStat.preSalaryNextFiveYears,
+                  fiveYearsReturn: talentStat.preReturnNextFiveYears,
+                ),
               ),
               const SizedBox(height: 8),
               Padding(
@@ -133,7 +140,10 @@ class TalentGraphCard extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: ResignationProbablityLineGraph(),
+                  child: ResignationProbablityLineGraph(
+                    fiveYearsResignationProbability:
+                        talentStat.preResignationNextFiveYears,
+                  ),
                 ),
               ),
             ],

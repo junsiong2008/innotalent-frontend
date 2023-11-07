@@ -1,16 +1,46 @@
 import 'package:devhack_2023/const.dart';
+import 'package:devhack_2023/models/pre_rating.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
 class RatingSpiderChartCard extends StatelessWidget {
-  const RatingSpiderChartCard({super.key});
+  const RatingSpiderChartCard({
+    super.key,
+    required this.preRating,
+  });
+
+  final PreRating preRating;
 
   @override
   Widget build(BuildContext context) {
     return RadarChart(
       RadarChartData(
         radarTouchData: RadarTouchData(),
-        dataSets: showingDataSets(),
+        dataSets: [
+          RadarDataSet(
+            fillColor: metricColor.withOpacity(0.25),
+            borderColor: metricColor.withOpacity(0.5),
+            entryRadius: 2,
+            dataEntries: [
+              RadarEntry(
+                value: preRating.skillSet.toDouble(),
+              ),
+              RadarEntry(
+                value: preRating.development.toDouble(),
+              ),
+              RadarEntry(
+                value: preRating.culture.toDouble(),
+              ),
+              RadarEntry(
+                value: preRating.outstanding.toDouble(),
+              ),
+              RadarEntry(
+                value: preRating.attitude.toDouble(),
+              )
+            ],
+            borderWidth: 2,
+          )
+        ],
         radarBackgroundColor: Colors.transparent,
         borderData: FlBorderData(show: false),
         radarBorderData: const BorderSide(color: Colors.transparent),
@@ -56,49 +86,6 @@ class RatingSpiderChartCard extends StatelessWidget {
       swapAnimationDuration: const Duration(milliseconds: 400),
     );
   }
-
-  List<RadarDataSet> showingDataSets() {
-    return rawDataSets().asMap().entries.map((entry) {
-      final rawDataSet = entry.value;
-
-      return RadarDataSet(
-        fillColor: rawDataSet.color.withOpacity(0.25),
-        borderColor: rawDataSet.color.withOpacity(0.5),
-        entryRadius: 2,
-        dataEntries:
-            rawDataSet.values.map((e) => RadarEntry(value: e)).toList(),
-        borderWidth: 2,
-      );
-    }).toList();
-  }
-
-  List<RawDataSet> rawDataSets() {
-    return [
-      RawDataSet(
-        title: 'Fashion',
-        color: metricColor,
-        values: [
-          5,
-          4,
-          3,
-          4,
-          5,
-        ],
-      ),
-    ];
-  }
-}
-
-class RawDataSet {
-  RawDataSet({
-    required this.title,
-    required this.color,
-    required this.values,
-  });
-
-  final String title;
-  final Color color;
-  final List<double> values;
 }
 
 final gridColor = Colors.grey[400];
