@@ -76,7 +76,7 @@ class RatingSpiderChartCard extends StatelessWidget {
     return [
       RawDataSet(
         title: 'Fashion',
-        color: fashionColor,
+        color: metricColor,
         values: [
           5,
           4,
@@ -103,4 +103,4 @@ class RawDataSet {
 
 final gridColor = Colors.grey[400];
 final titleColor = Colors.grey[400];
-const fashionColor = Color(primaryColorCode);
+const metricColor = Color(primaryColorCode);

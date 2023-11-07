@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 class ReturnBarChartCard extends StatelessWidget {
   const ReturnBarChartCard({super.key});
 
-  final Color dark = const Color(0XFFDFA9B0);
-  final Color light = const Color(primaryColorCode);
+  final Color negative = const Color(0XFFDFA9B0);
+  final Color positive = const Color(primaryColorCode);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,6 @@ class ReturnBarChartCard extends StatelessWidget {
   }
 
   Widget bottomTitles(double value, TitleMeta meta) {
-    const style = TextStyle(fontSize: 10);
     String text;
     switch (value.toInt()) {
       case 0:
@@ -75,13 +74,25 @@ class ReturnBarChartCard extends StatelessWidget {
       case 2:
         text = '2026';
         break;
+      case 3:
+        text = '2027';
+        break;
+      case 4:
+        text = '2028';
+        break;
       default:
         text = '';
         break;
     }
     return SideTitleWidget(
       axisSide: meta.axisSide,
-      child: Text(text, style: style),
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 10,
+          color: Colors.grey[400],
+        ),
+      ),
     );
   }
 
@@ -89,14 +100,15 @@ class ReturnBarChartCard extends StatelessWidget {
     if (value == meta.max + 1) {
       return Container();
     }
-    const style = TextStyle(
-      fontSize: 10,
-    );
+
     return SideTitleWidget(
       axisSide: meta.axisSide,
       child: Text(
         meta.formattedValue,
-        style: style,
+        style: TextStyle(
+          fontSize: 10,
+          color: Colors.grey[400],
+        ),
       ),
     );
   }
@@ -110,8 +122,8 @@ class ReturnBarChartCard extends StatelessWidget {
           BarChartRodData(
             toY: 100,
             rodStackItems: [
-              BarChartRodStackItem(0, 50, dark),
-              BarChartRodStackItem(50, 100, light),
+              BarChartRodStackItem(0, 50, negative),
+              BarChartRodStackItem(50, 100, positive),
             ],
             borderRadius: BorderRadius.zero,
             width: barsWidth,
@@ -125,8 +137,8 @@ class ReturnBarChartCard extends StatelessWidget {
           BarChartRodData(
             toY: 100,
             rodStackItems: [
-              BarChartRodStackItem(0, 30, dark),
-              BarChartRodStackItem(30, 100, light),
+              BarChartRodStackItem(0, 30, negative),
+              BarChartRodStackItem(30, 100, positive),
             ],
             borderRadius: BorderRadius.zero,
             width: barsWidth,
@@ -140,8 +152,38 @@ class ReturnBarChartCard extends StatelessWidget {
           BarChartRodData(
             toY: 100,
             rodStackItems: [
-              BarChartRodStackItem(0, 20, dark),
-              BarChartRodStackItem(20, 100, light),
+              BarChartRodStackItem(0, 20, negative),
+              BarChartRodStackItem(20, 100, positive),
+            ],
+            borderRadius: BorderRadius.zero,
+            width: barsWidth,
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 3,
+        barsSpace: barsSpace,
+        barRods: [
+          BarChartRodData(
+            toY: 100,
+            rodStackItems: [
+              BarChartRodStackItem(0, 15, negative),
+              BarChartRodStackItem(15, 100, positive),
+            ],
+            borderRadius: BorderRadius.zero,
+            width: barsWidth,
+          ),
+        ],
+      ),
+      BarChartGroupData(
+        x: 4,
+        barsSpace: barsSpace,
+        barRods: [
+          BarChartRodData(
+            toY: 100,
+            rodStackItems: [
+              BarChartRodStackItem(0, 10, negative),
+              BarChartRodStackItem(10, 100, positive),
             ],
             borderRadius: BorderRadius.zero,
             width: barsWidth,

@@ -1,5 +1,5 @@
 import 'package:devhack_2023/const.dart';
-import 'package:devhack_2023/model/selected_file.dart';
+import 'package:devhack_2023/models/selected_file.dart';
 import 'package:flutter/material.dart';
 
 class FilePreview extends StatelessWidget {

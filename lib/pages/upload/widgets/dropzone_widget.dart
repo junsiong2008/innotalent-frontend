@@ -1,9 +1,9 @@
-import 'package:devhack_2023/const.dart';
-import 'package:devhack_2023/model/selected_file.dart';
-import 'package:devhack_2023/responsive.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropzone/flutter_dropzone.dart';
+import 'package:dotted_border/dotted_border.dart';
+import 'package:devhack_2023/const.dart';
+import 'package:devhack_2023/models/selected_file.dart';
+import 'package:devhack_2023/responsive.dart';
 
 class DropzoneWidget extends StatefulWidget {
   final ValueChanged<SelectedFile> onDroppedFile;
@@ -107,11 +107,6 @@ class _DropzoneWidgetState extends State<DropzoneWidget> {
     final mime = await controller.getFileMIME(event);
     final bytes = await controller.getFileSize(event);
     final url = await controller.createFileUrl(event);
-
-    print('Name: $name');
-    print('Mime: $mime');
-    print('Bytes: $bytes');
-    print('Url: $url');
 
     final receivedFile = SelectedFile(
       url: url,

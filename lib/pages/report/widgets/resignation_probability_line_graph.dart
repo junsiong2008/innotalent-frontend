@@ -9,6 +9,8 @@ class ResignationProbablityLineGraph extends StatelessWidget {
     0: '2024',
     10: '2025',
     20: '2026',
+    30: '2027',
+    40: '2028',
   };
 
   final leftTitle = {
@@ -21,9 +23,11 @@ class ResignationProbablityLineGraph extends StatelessWidget {
   };
 
   final List<FlSpot> spots = const [
-    FlSpot(0, 20),
-    FlSpot(10, 30),
-    FlSpot(20, 35),
+    FlSpot(0, 10),
+    FlSpot(10, 20),
+    FlSpot(20, 25),
+    FlSpot(30, 35),
+    FlSpot(40, 40),
   ];
 
   @override
@@ -110,7 +114,7 @@ class ResignationProbablityLineGraph extends StatelessWidget {
               spots: spots)
         ],
         minX: 0,
-        maxX: 30,
+        maxX: 40,
         maxY: 105,
         minY: -5,
       ),

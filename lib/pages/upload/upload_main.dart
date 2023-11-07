@@ -1,7 +1,5 @@
-import 'package:devhack_2023/pages/upload/upload_page.dart';
 import 'package:flutter/material.dart';
-import 'package:devhack_2023/widgets/menu.dart';
-import 'package:devhack_2023/Responsive.dart';
+import 'package:devhack_2023/pages/upload/upload_page.dart';
 
 class UploadMain extends StatelessWidget {
   UploadMain({super.key});
@@ -18,9 +16,6 @@ class UploadMain extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       key: _scaffoldKey,
-      drawer: !Responsive.isDesktop(context)
-          ? SizedBox(width: 250, child: Menu(scaffoldKey: _scaffoldKey))
-          : null,
       body: SafeArea(
         child: Row(
           children: [

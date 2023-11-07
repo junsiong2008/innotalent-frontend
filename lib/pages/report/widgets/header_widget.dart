@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:devhack_2023/const.dart';
 import 'package:devhack_2023/responsive.dart';
 
 const List<String> roles = <String>[
@@ -35,6 +34,7 @@ class _HeaderState extends State<Header> {
       height: 35,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (!Responsive.isDesktop(context))
             Padding(
@@ -64,6 +64,14 @@ class _HeaderState extends State<Header> {
                   roles.map<DropdownMenuEntry<String>>((String value) {
                 return DropdownMenuEntry<String>(value: value, label: value);
               }).toList(),
+            ),
+          ),
+          IconButton(
+            onPressed: () async {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.logout,
             ),
           ),
         ],
