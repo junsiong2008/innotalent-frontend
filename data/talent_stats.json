@@ -1,0 +1,35 @@
+{
+    "pre_rating": {
+        "rold_id": 1,
+        "skill_set": 5,
+        "development": 4,
+        "culture": 3,
+        "outstanding": 4,
+        "attitude": 5
+    },
+    "pre_performance": 78,
+    "pre_grade": "B+",
+    "pre_salary": 3500.0,
+    "pre_salary_next_five_years": [
+        3500.0,
+        3750.0,
+        3950.0,
+        4200.0,
+        4500.0
+    ],
+    "pre_return_next_five_years": [
+        3500.0,
+        8750.0,
+        15800.0,
+        23800.0,
+        40500.0
+    ],
+    "pre_resignation_next_five_years": [
+        10.0,
+        20.0,
+        25.0,
+        35.0,
+        40.0
+    ],
+    "next_interview_percentage": 75.0
+}
