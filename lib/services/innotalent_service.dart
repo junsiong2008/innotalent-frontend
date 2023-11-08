@@ -42,16 +42,4 @@ class InnotalentService {
 
     return talentStat;
   }
-
-  // Future<String> submitApplication() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return '1';
-  // }
-
-  // Future<TalentStat> getTalentStat(String talentId) async {
-  //   final String data = await rootBundle.loadString('data/talent_stats.json');
-  //   final TalentStat talentStat = TalentStat.fromJson(jsonDecode(data));
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return talentStat;
-  // }
 }
