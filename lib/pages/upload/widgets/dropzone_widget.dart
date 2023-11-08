@@ -3,7 +3,7 @@ import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:devhack_2023/const.dart';
 import 'package:devhack_2023/models/selected_file.dart';
-import 'package:devhack_2023/responsive.dart';
+import 'package:devhack_2023/widgets/responsive.dart';
 
 class DropzoneWidget extends StatefulWidget {
   final ValueChanged<SelectedFile> onDroppedFile;

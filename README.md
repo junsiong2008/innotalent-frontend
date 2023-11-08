@@ -1,17 +1,157 @@
-# devhack_2023
+# InnoTalent Engine Frontend
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 
-A new Flutter project.
+InnoTalent Engine Frontend is the frontend Flutter application for InnoTalent API which is designed to streamline the hiring process for companies. By calling the backend that integrates with five AI models, including one from **OpenAI** and **four custom AI models**, this frontend Flutter Web App provides a means for user to:
 
-## Getting Started
+* Upload resume to be processed by the backend
+* View predicted insights returned by the backend
 
-This project is a starting point for a Flutter application.
+<br>
 
-A few resources to get you started if this is your first Flutter project:
+The upload page allows the user to upload a file by drag and drop or picking a file from local filesystem:
+![resume_upload_page](./screenshots/upload.png)
+<br>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+After the user picked a file, a preview on the file name, file size and file type is shown:
+![selected_for_upload](./screenshots/selected_for_upload.png)
+<br>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# innotalent-frontend
+The dashboard on the frontend presents the predicted score in an intuitive dashboard that provides actionable insights for HR to determine if a candidate is the right fit for the company.
+![dashboard](./screenshots/dashboard.png)
+<br>
+
+## UI Flow
+![analysis_process](./screenshots/flow.gif)
+
+<br/>
+
+## Pre-requisites
+This project uses the following SDKs:
+```
+sdk: '>=2.19.5 <3.0.0'
+```
+
+Additional information about the Flutter packages used could be found in `pubspec.yaml`.
+
+<br/>
+
+## Features
+- **AI Integration**: Integration with a Python backend for prediction and analysis services.
+- **Easy Upload**: Allows candidates to upload their resumes by dragging and dropping or selecting from file system.
+- **Intuitive Dashboard**: Insights on dashboard is easy to understand and can be translated to action items to attract new talent and retain existing talent.
+
+
+## How it Works
+1. **Upload Resume**
+2. **AI Analysis**
+3. **Evaluation**
+4. **Overall Score**
+5. **Provide Next Action Insight**
+
+
+## Benefits
+- **Smart Decision-Making**: Make data-driven decisions by leveraging AI insights for candidate evaluation.
+- **Cost-Efficiency**: Reduce costs associated with manual resume screening and optimize the hiring process.
+- **Enhanced Hiring**: Identify and hire candidates who align with the organization's requirements and values.
+- **Improved Productivity**: Focus on interviewing candidates who are more likely to contribute positively to the company.
+
+
+## Folder Structure
+The source code of the project is organized in the `lib` directory with the following structure:
+```
+
+- models/
+    |
+    * pre_rating.dart
+    * selected_file.dart
+    * talent_stat.dart
+
+- pages/
+    |
+    * reports/
+        |
+        * widgets/
+            |
+            * header_widget.dart
+            * rating_spider_chart_card.dart
+            * resignation_probability_line_graph.dart
+            * return_bar_chart_card.dart
+            * talent_graph_card.dart
+            * talent_metric_card.dart
+            * talent_summary_card.dart
+        * report_page.dart
+        * dashboard.dart
+
+    * upload/
+        |
+        * widgets/
+            |
+            * dropzone_widget.dart
+            * file_preview_widget.dart
+            * loading_widget.dart
+            * upload_card.dart
+        * upload_main.dart
+        * upload_page.dart
+    
+    * services/
+        |
+        * innotalent_service.dart
+    
+    * utils/
+        |
+        * role_util.dart
+    
+    * widgets/
+        |
+        * custom_card.dart
+        * responsive.dart
+
+- const.dart
+- main.dart
+        
+
+```
+
+<br/>
+
+## Running the project locally
+Follow the steps below to run the project on your localhost:
+1. Clone the project in a local directory:
+    ```
+    git clone https://github.com/junsiong2008/innotalent-frontend.git
+    ```
+2. Navigate to project directory:
+    ```
+    cd innotalent-frontend
+    ```
+
+3. Get the Flutter packages:
+    ```
+    flutter pub get
+    ```
+
+4. Run the web application 🎉:
+    ```
+    flutter run
+    ```
+
+<br/>
+
+## InnoTalent Engine Components
+* [Frontend](https://github.com/junsiong2008/innotalent-frontend.git)
+* [Backend API](https://github.com/LeeChongKeat/API_InnoTalent_Engine)
+* [Resignation Intention AI](https://github.com/LeeChongKeat/Resignation_Intention_Prediction)
+* [Salary AI](https://github.com/LeeChongKeat/Salary_Prediction)
+* [Work Performance (Return To Work)](https://github.com/LeeChongKeat/Work_Performance_Prediction) 
+
+
+## DevHack 2023 Google Developer Groups George Town
+Team: (3A)th Industrial
+
+Member 1 : Ts. Lee Chong Keat jerry_keat@hotmail.com
+
+Member 2 : Teng Jun Siong junsiong2599@gmail.com
+
+Member 3 : Teoh Chun Keat chunkeatteoh99@gmail.com
+
+

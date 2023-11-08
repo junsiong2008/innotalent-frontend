@@ -3,7 +3,7 @@ import 'package:devhack_2023/models/talent_stat.dart';
 import 'package:devhack_2023/pages/report/widgets/resignation_probability_line_graph.dart';
 import 'package:devhack_2023/pages/report/widgets/return_bar_chart_card.dart';
 import 'package:devhack_2023/pages/report/widgets/rating_spider_chart_card.dart';
-import 'package:devhack_2023/responsive.dart';
+import 'package:devhack_2023/widgets/responsive.dart';
 import 'package:devhack_2023/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 

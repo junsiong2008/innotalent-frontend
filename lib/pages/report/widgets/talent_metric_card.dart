@@ -1,5 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:devhack_2023/responsive.dart';
+import 'package:devhack_2023/widgets/responsive.dart';
 import 'package:devhack_2023/widgets/custom_card.dart';
 import 'package:flutter/material.dart';
 

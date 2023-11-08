@@ -2,7 +2,7 @@ import 'package:devhack_2023/models/talent_stat.dart';
 import 'package:devhack_2023/pages/report/widgets/talent_graph_card.dart';
 import 'package:flutter/material.dart';
 import 'package:devhack_2023/pages/report/widgets/header_widget.dart';
-import 'package:devhack_2023/responsive.dart';
+import 'package:devhack_2023/widgets/responsive.dart';
 import 'package:devhack_2023/pages/report/widgets/talent_summary_card.dart';
 
 class ReportPage extends StatelessWidget {

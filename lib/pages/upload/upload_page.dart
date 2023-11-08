@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:devhack_2023/pages/upload/widgets/upload_card.dart';
-import 'package:devhack_2023/Responsive.dart';
+import 'package:devhack_2023/widgets/Responsive.dart';
 
 class UploadPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;

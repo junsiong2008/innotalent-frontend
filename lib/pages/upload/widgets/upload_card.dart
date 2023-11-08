@@ -1,8 +1,8 @@
-import 'package:devhack_2023/dashboard.dart';
+import 'package:devhack_2023/pages/report/dashboard.dart';
 import 'package:devhack_2023/models/selected_file.dart';
 import 'package:devhack_2023/pages/upload/widgets/dropzone_widget.dart';
 import 'package:devhack_2023/pages/upload/widgets/loading_widget.dart';
-import 'package:devhack_2023/responsive.dart';
+import 'package:devhack_2023/widgets/responsive.dart';
 import 'package:devhack_2023/services/innotalent_service.dart';
 import 'package:devhack_2023/widgets/custom_card.dart';
 import 'package:flutter/material.dart';

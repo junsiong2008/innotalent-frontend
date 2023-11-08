@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:devhack_2023/pages/report/widgets/talent_metric_card.dart';
-import 'package:devhack_2023/Responsive.dart';
+import 'package:devhack_2023/widgets/Responsive.dart';
 
 class TalentSummaryCard extends StatelessWidget {
   const TalentSummaryCard({
