@@ -39,7 +39,7 @@ Additional information about the Flutter packages used could be found in `pubspe
 - **AI Integration**: Integration with a Python backend for prediction and analysis services.
 - **Easy Upload**: Allows candidates to upload their resumes by dragging and dropping or selecting from file system.
 - **Intuitive Dashboard**: Insights on dashboard is easy to understand and can be translated to action items to attract new talent and retain existing talent.
-
+<br/>
 
 ## How it Works
 1. **Upload Resume**
@@ -47,14 +47,14 @@ Additional information about the Flutter packages used could be found in `pubspe
 3. **Evaluation**
 4. **Overall Score**
 5. **Provide Next Action Insight**
-
+<br/>
 
 ## Benefits
 - **Smart Decision-Making**: Make data-driven decisions by leveraging AI insights for candidate evaluation.
 - **Cost-Efficiency**: Reduce costs associated with manual resume screening and optimize the hiring process.
 - **Enhanced Hiring**: Identify and hire candidates who align with the organization's requirements and values.
 - **Improved Productivity**: Focus on interviewing candidates who are more likely to contribute positively to the company.
-
+<br/>
 
 ## Folder Structure
 The source code of the project is organized in the `lib` directory with the following structure:
