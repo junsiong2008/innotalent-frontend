@@ -143,7 +143,7 @@ Follow the steps below to run the project on your localhost:
 * [Resignation Intention AI](https://github.com/LeeChongKeat/Resignation_Intention_Prediction)
 * [Salary AI](https://github.com/LeeChongKeat/Salary_Prediction)
 * [Work Performance (Return To Work)](https://github.com/LeeChongKeat/Work_Performance_Prediction) 
-
+<br/>
 
 ## DevHack 2023 Google Developer Groups George Town
 Team: (3A)th Industrial
