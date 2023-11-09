@@ -25,6 +25,15 @@ The dashboard on the frontend presents the predicted score in an intuitive dashb
 
 <br/>
 
+## InnoTalent Engine Components
+* [Frontend](https://github.com/junsiong2008/innotalent-frontend.git)
+* [Backend API](https://github.com/LeeChongKeat/API_InnoTalent_Engine)
+* [Employee Rating AI](https://github.com/LeeChongKeat/Employee_Personal_Rating_Prediction)
+* [Resignation Intention AI](https://github.com/LeeChongKeat/Resignation_Intention_Prediction)
+* [Salary AI](https://github.com/LeeChongKeat/Salary_Prediction)
+* [Work Performance (Return on Work)](https://github.com/LeeChongKeat/Work_Performance_Prediction) 
+<br/>
+
 ## Pre-requisites
 This project uses the following SDKs:
 ```
@@ -137,13 +146,6 @@ Follow the steps below to run the project on your localhost:
 
 <br/>
 
-## InnoTalent Engine Components
-* [Frontend](https://github.com/junsiong2008/innotalent-frontend.git)
-* [Backend API](https://github.com/LeeChongKeat/API_InnoTalent_Engine)
-* [Resignation Intention AI](https://github.com/LeeChongKeat/Resignation_Intention_Prediction)
-* [Salary AI](https://github.com/LeeChongKeat/Salary_Prediction)
-* [Work Performance (Return on Work)](https://github.com/LeeChongKeat/Work_Performance_Prediction) 
-<br/>
 
 ## DevHack 2023 Google Developer Groups George Town
 Team: (3A)th Industrial
