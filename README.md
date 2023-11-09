@@ -22,7 +22,6 @@ The dashboard on the frontend presents the predicted score in an intuitive dashb
 
 ## UI Flow
 ![analysis_process](./screenshots/flow.gif)
-
 <br/>
 
 ## InnoTalent Engine Components
