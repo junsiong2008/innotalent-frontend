@@ -33,6 +33,22 @@ The dashboard on the frontend presents the predicted score in an intuitive dashb
 * [Work Performance (Return on Work)](https://github.com/LeeChongKeat/Work_Performance_Prediction) 
 <br/>
 
+## Business Model
+InnoTalent Engine offers a pioneering and  first-to-market solution for the HR hiring process.
+It provides a customer-fit dashboard for HR to conduct a comprehensive 360° analysis and generate actionable insights for HR to hire the right talent. 
+InnoTalent allows the customization of parameters based on company policies to pinpoint the right talent.
+
+Free Features for Everyone:
+1) Companies can freely use InnoTalent to analyze talent resumes.
+
+Premium Users:
+2) Access to detailed job history, records, and provisional job data of the talent.
+
+How it make Money:
+1) Premium User Subscriptions
+2) Utilization of Talent Data to train and improve our AI model, continuously enhancing accuracy and effectiveness.
+<br/>
+
 ## Pre-requisites
 This project uses the following SDKs:
 ```
