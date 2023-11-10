@@ -39,10 +39,10 @@ It provides a customer-fit dashboard for HR to conduct a comprehensive 360° ana
 InnoTalent allows the customization of parameters based on company policies to pinpoint the right talent.
 
 Free Features for Everyone: <br/>
-1) Companies can freely use InnoTalent to analyze talent resumes.
+- Companies can freely use InnoTalent to analyze talent resumes.
 
 Premium Users:  <br/>
-2) Access to detailed job history, records, and provisional job data of the talent.
+- Access to detailed job history, records, and provisional job data of the talent.
 
 How it make Money:  <br/>
 1) Premium User Subscriptions
