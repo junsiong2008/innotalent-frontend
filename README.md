@@ -38,13 +38,13 @@ InnoTalent Engine offers a pioneering and  first-to-market solution for the HR h
 It provides a customer-fit dashboard for HR to conduct a comprehensive 360° analysis and generate actionable insights for HR to hire the right talent. 
 InnoTalent allows the customization of parameters based on company policies to pinpoint the right talent.
 
-Free Features for Everyone:
+Free Features for Everyone: <br/>
 1) Companies can freely use InnoTalent to analyze talent resumes.
 
-Premium Users:
+Premium Users:  <br/>
 2) Access to detailed job history, records, and provisional job data of the talent.
 
-How it make Money:
+How it make Money:  <br/>
 1) Premium User Subscriptions
 2) Utilization of Talent Data to train and improve our AI model, continuously enhancing accuracy and effectiveness.
 <br/>
